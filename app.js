@@ -66,6 +66,6 @@ app.get('/', function (req, res) {
     const newFile = file.replace('"{process.env.BROWSER_REFRESH_URL}"', process.env.BROWSER_REFRESH_URL);
     res.send(newFile);
 })
-const Port = 1000 || process.env.PORT;
+const Port = process.env.PORT || 1000;
 
 app.listen(Port, console.log(" Server Connected"));
