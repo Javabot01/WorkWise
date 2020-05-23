@@ -57,7 +57,7 @@ app.use("/", require("./routes/index.js"));
 app.use("/", require("./routes/users.js"));
 
 
-process.send({ event: 'online' });
+// process.send({ event: 'online' });
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/static', express.static(__dirname + '/client'));
 

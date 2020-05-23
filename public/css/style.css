@@ -1389,7 +1389,7 @@ blockquote p {
   letter-spacing: 0.1rem;
 }
 
-.footer-p{
+.footer-p {
   font-size: 20px;
   color: #495057;
 }
@@ -1519,4 +1519,6 @@ blockquote p {
     stroke-dashoffset: -35px;
   }
   100% {
-    stroke-dasha
+    stroke-dasharray: inherit;
+  }
+}
