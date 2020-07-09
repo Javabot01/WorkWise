@@ -1,32 +1,32 @@
-const express = require("express");
-const router = express.Router();
-const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
+const express = require('express')
+const router = express.Router()
+const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth')
 
-router.get("/", forwardAuthenticated, (req, res) => {
-    res.render("welcome")
-});
-router.get("/dashboard", ensureAuthenticated, (req, res) => {
-    res.render("dashboard", {
-        user: req.user
-    })
-});
-router.get("/courses", ensureAuthenticated, (req, res) => {
-    res.render("courses/courses")
-});
-router.get("/enroll", ensureAuthenticated, (req, res) => {
-    res.render("courses/enroll")
-});
-router.get("/contact", (req, res) => {
-    res.render("contact")
-});
-router.get("/about", (req, res) => {
-    res.render("about")
-});
-router.get("/blog", (req, res) => {
-    res.render("blogs/blog")
-});
-router.get("/blog-single", (req, res) => {
-    res.render("blogs/blog-single")
-});
+router.get('/companies', forwardAuthenticated, (req, res) => {
+  res.render('companies')
+})
+router.get('/', ensureAuthenticated, (req, res) => {
+  res.render('index', {
+    user: req.user,
+  })
+})
+router.get('/jobs', ensureAuthenticated, (req, res) => {
+  res.render('jobs')
+})
+router.get('/projects', ensureAuthenticated, (req, res) => {
+  res.render('project')
+})
+router.get('/company-profile', (req, res) => {
+  res.render('company-profile')
+})
+router.get('/about', (req, res) => {
+  res.render('about')
+})
+router.get('/user-profile', ensureAuthenticated, (req, res) => {
+  res.render('user-profile')
+})
+router.get('/my-profile-feed', ensureAuthenticated, (req, res) => {
+  res.render('my-profile-feed')
+})
 
-module.exports = router;
+module.exports = router
